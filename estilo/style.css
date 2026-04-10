@@ -129,7 +129,7 @@ a {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-28px);
+        transform: translateY(-25px);
     }
 }
 
@@ -175,7 +175,7 @@ a {
   font-family: var(--fonte-corpo);
   font-size: 0.85rem;
   font-weight: 400;
-  color: var(--cinza);
+  color: var(--branco-suave);
   letter-spacing: 0.3px;
   transition: color 0.2s;
   position: relative;
