@@ -111,7 +111,26 @@ a {
   border: 2px solid var(--verde);
   transform: scale(1.1);
   box-shadow: 1 1 10 var(--verde);
-  
+}
+
+/* Animação de flutuar */
+  .float-image {
+    animation: float 7s ease-in-out infinite;
+    transition: all 0.5s ease;
+}
+
+.float-image:hover {
+    animation-play-state: paused;
+    transform: scale(1.03);
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-28px);
+    }
 }
 
 
