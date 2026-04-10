@@ -1,6 +1,7 @@
+@charset "UTF-8";
+
 /* ============================================================
    VARIÁVEIS — paleta, fontes, espaçamento
-   ✏️ EDITE: troque --verde para mudar toda a paleta de destaque
 ============================================================ */
 :root {
   --preto: #080808;
@@ -9,7 +10,7 @@
   --cinza: #5a5a5a;
   --branco-suave: #b8b8b8;
   --branco: #efefef;
-  --verde: #3ef07c; /* ✏️ destaque principal */
+  --verde: #3ef07c; /*  destaque principal */
 
   --fonte-titulo: "Clash Display", sans-serif;
   --fonte-corpo: "Cabinet Grotesk", sans-serif;
@@ -68,9 +69,6 @@ a {
 
 /* ============================================================
    ANIMAÇÕES CSS PURAS
-   Usando animation-play-state para ativar ao entrar na viewport
-   via :focus-within e target, mas para máximo suporte usamos
-   a técnica de @keyframes com animation-delay e fill-mode
 ============================================================ */
 @keyframes subir {
   from {
@@ -104,82 +102,18 @@ a {
   }
 }
 
-/* Hero — animação automática ao carregar */
-.hero-texto {
-  animation: subir 0.7s ease both;
+.hero-enzo {
+  transition: .5s;
 }
 
-.hero-imagem {
-  animation: aparecer 0.8s 0.2s ease both;
+.hero-enzo:hover {
+  cursor: pointer;
+  border: 2px solid var(--verde);
+  transform: scale(1.1);
+  box-shadow: 1 1 10 var(--verde);
+  
 }
 
-/* Seções — animação ao aparecer (técnica CSS view-timeline fallback) */
-/* Usamos animation-timeline quando suportado, com fallback de opacity 0 -> 1 */
-.secao > *,
-.sobre-grade > *,
-.jogos-grade > .jogo-card,
-.langs-grade > .lang-item,
-.projetos-grade > .projeto-card,
-.contato-secao > * {
-  animation: subir 0.6s ease both;
-  animation-timeline: view();
-  animation-range: entry 0% entry 30%;
-}
-
-/* Atrasos escalonados para cards em sequência */
-.jogo-card:nth-child(1) {
-  animation-delay: 0s;
-}
-.jogo-card:nth-child(2) {
-  animation-delay: 0.08s;
-}
-.jogo-card:nth-child(3) {
-  animation-delay: 0.16s;
-}
-.jogo-card:nth-child(4) {
-  animation-delay: 0.24s;
-}
-
-.lang-item:nth-child(1) {
-  animation-delay: 0s;
-}
-.lang-item:nth-child(2) {
-  animation-delay: 0.06s;
-}
-.lang-item:nth-child(3) {
-  animation-delay: 0.12s;
-}
-.lang-item:nth-child(4) {
-  animation-delay: 0.18s;
-}
-.lang-item:nth-child(5) {
-  animation-delay: 0.24s;
-}
-.lang-item:nth-child(6) {
-  animation-delay: 0.3s;
-}
-
-.projeto-card:nth-child(1) {
-  animation-delay: 0s;
-}
-.projeto-card:nth-child(2) {
-  animation-delay: 0.1s;
-}
-.projeto-card:nth-child(3) {
-  animation-delay: 0.2s;
-}
-
-/* Fallback para browsers sem animation-timeline */
-@supports not (animation-timeline: view()) {
-  .secao > *,
-  .sobre-grade > *,
-  .jogos-grade > .jogo-card,
-  .langs-grade > .lang-item,
-  .projetos-grade > .projeto-card,
-  .contato-secao > * {
-    animation: subir 0.6s ease both;
-  }
-}
 
 /* ============================================================
    NAVEGAÇÃO
@@ -201,7 +135,7 @@ a {
 
 /* Nav surge ao carregar */
 .nav {
-  animation: subir 0.5s ease both;
+  animation: subir 0.2s ease both;
 }
 
 .nav-logo {
@@ -581,7 +515,7 @@ a {
 
 /* Cards "quero aprender" — aparência mais discreta */
 .lang-item--futuro {
-  opacity: 0.55;
+  opacity: 0.7;
   border-style: dashed;
 }
 
@@ -619,7 +553,7 @@ a {
 }
 
 .projeto-imagem {
-
+  width: 100%;
   overflow: hidden;
   background: var(--escuro);
 }
@@ -817,6 +751,7 @@ a {
     height: 255px;
     margin: 0 auto;
   }
+
 
   .hero-sub {
     margin: 1rem auto 0;
